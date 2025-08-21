@@ -449,6 +449,10 @@
         const magicButton = document.getElementById('magicButton');
         const buttonText = document.getElementById('buttonText');
         
+        // Variables para controlar la música
+        let backgroundMusic = null;
+        let userInteracted = false;
+        
         // Crear estrellas de fondo
         function createStars() {
             const starsContainer = document.getElementById('stars');
@@ -551,25 +555,21 @@
             }
         }
         
-         // Inicializar la música
+        // Inicializar la música
         function initMusic() {
-            // Reemplaza esta URL con la de tu canción preferida de internet
+            // URL de música de cumpleaños
             const musicURL = 'https://cdn.pixabay.com/audio/2025/06/21/audio_3670645bb2.mp3';
             
             backgroundMusic = new Audio(musicURL);
-            backgroundMusic.volume = 0.4;
+            backgroundMusic.volume = 0.5;
             backgroundMusic.loop = true;
             
             console.log("Música inicializada correctamente");
-            
-            // Intentar reproducir automáticamente al cargar la página
-            startBackgroundMusic();
         }
         
-        // Función para iniciar la música de fondo
-        function startBackgroundMusic() {
-            if (backgroundMusic) {
-                // Crear una promesa para reproducir la música
+        // Función para intentar reproducir música
+        function tryPlayMusic() {
+            if (backgroundMusic && userInteracted) {
                 const playPromise = backgroundMusic.play();
                 
                 if (playPromise !== undefined) {
@@ -578,18 +578,17 @@
                             console.log("Música reproduciéndose automáticamente");
                         })
                         .catch(error => {
-                            console.log("Reproducción automática prevenida:", error);
+                            console.log("Reproducción automática prevenida, esperando interacción:", error);
                         });
                 }
             }
         }
-
-        // Reproducir música
-        function playMusic() {
-            if (backgroundMusic) {
-                backgroundMusic.play().catch(e => {
-                    console.log("Error al reproducir música:", e);
-                });
+        
+        // Marcar que el usuario ha interactuado
+        function markUserInteracted() {
+            if (!userInteracted) {
+                userInteracted = true;
+                tryPlayMusic();
             }
         }
 
@@ -626,6 +625,8 @@
         
         // Alternar magia automática al hacer clic en el botón
         magicButton.addEventListener('click', function() {
+            markUserInteracted();
+            
             if (isMagicActive) {
                 stopAutoMagic();
             } else {
@@ -637,6 +638,7 @@
         window.onload = function() {
             createStars();
             initMusic(); // Inicializar la música
+            
             // Crear confeti inicial
             setTimeout(() => {
                 createConfetti();
@@ -644,17 +646,29 @@
             }, 500);
             
             // Iniciar magia automática después de 3 segundos
-            setTimeout(startAutoMagic, 3000);
+            setTimeout(startAutoMagic, 1000);
+            
+            // Intentar reproducir música después de un breve retraso
+            setTimeout(tryPlayMusic, 500);
         }
         
         // Efecto al hacer clic en cualquier parte
         document.body.addEventListener('click', function() {
+            markUserInteracted();
             createMagic();
         });
         
         // Efecto al presionar cualquier tecla
         document.addEventListener('keydown', function() {
+            markUserInteracted();
             createMagic();
+        });
+        
+        // Intentar reproducir cuando la página gana visibilidad (pestaña activa)
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                tryPlayMusic();
+            }
         });
     </script>
 </body>
