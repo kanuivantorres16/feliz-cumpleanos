@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Control de Acuerdos Comerciales CRESIO 2026</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegacion principal">
+        <div class="brand">
+          <span class="brand-mark">C</span>
+          <div>
+            <strong>CRESIO 2026</strong>
+            <span>Acuerdos comerciales</span>
+          </div>
+        </div>
+        <nav id="mainNav" class="nav-list"></nav>
+        <div class="sidebar-note">
+          <strong>Flujo operativo</strong>
+          <span>Compras registra y adjunta evidencias. Contabilidad consulta saldos, NC y reportes.</span>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <h1 id="viewTitle">Dashboard</h1>
+            <p id="viewSubtitle">Resumen ejecutivo de acuerdos, cumplimiento y alertas.</p>
+          </div>
+          <div class="topbar-actions">
+            <div class="role-switch" aria-label="Seleccion de rol">
+              <button type="button" data-role="compras" class="role-button is-active">Compras</button>
+              <button type="button" data-role="contabilidad" class="role-button">Contabilidad</button>
+            </div>
+            <button type="button" class="ghost-button" data-action="reset-demo" title="Restaurar datos iniciales">
+              Reiniciar
+            </button>
+          </div>
+        </header>
+
+        <section id="content" class="content" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

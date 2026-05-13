@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mockup de Pantallas - Acuerdos Comerciales CRESIO</title>
+    <link rel="stylesheet" href="./mockup-pantallas.css" />
+  </head>
+  <body>
+    <header class="mockup-header">
+      <div>
+        <span class="system-label">Mockup funcional</span>
+        <h1>Control de Acuerdos Comerciales CRESIO 2026</h1>
+        <p>
+          Pantallas propuestas para Compras y Contabilidad, basadas en la matriz Excel y
+          los comentarios del documento de maquetado.
+        </p>
+      </div>
+      <a class="open-app" href="./index.html">Abrir solucion web</a>
+    </header>
+
+    <main class="screen-board">
+      <section class="screen">
+        <div class="screen-top">
+          <div>
+            <span>01</span>
+            <h2>Dashboard ejecutivo</h2>
+          </div>
+          <strong>Solo lectura</strong>
+        </div>
+        <div class="kpi-grid">
+          <article><small>Convenios activos</small><b>21</b></article>
+          <article><small>Valor a recuperar</small><b>$ 0.00</b></article>
+          <article><small>Cumplimiento promedio</small><b>0.0%</b></article>
+          <article class="danger"><small>Acuerdos en peligro</small><b>21</b></article>
+        </div>
+        <div class="table-preview">
+          <div class="table-row header">
+            <span>Codigo</span><span>Laboratorio / linea</span><span>Tipo</span><span>Cumplimiento</span>
+          </div>
+          <div class="table-row">
+            <span>AC-2026-001</span><span>ABBOT - ALIANZA ABBOTT.FARMA</span><span>Rebate</span><span class="risk">Peligro</span>
+          </div>
+          <div class="table-row">
+            <span>AC-2026-024</span><span>DYVENPRO - FARMA COMERCIAL</span><span>Rebate</span><span class="risk">Peligro</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen">
+        <div class="screen-top">
+          <div>
+            <span>02</span>
+            <h2>Registro de convenio</h2>
+          </div>
+          <strong>Compras</strong>
+        </div>
+        <div class="form-preview">
+          <label>Codigo acuerdo<input value="AC-2026-001" /></label>
+          <label>Laboratorio<input value="ABBOT" /></label>
+          <label>Linea laboratorio<input value="ALIANZA ABBOTT.FARMA" /></label>
+          <label>Tipo / variable<select><option>Rebate</option></select></label>
+          <label>Periodicidad<select><option>ANUAL</option></select></label>
+          <label>% Rebate<input value="1.35%" /></label>
+        </div>
+        <div class="chips">
+          <span>Proveedor: 1 a varios</span>
+          <span>Escala: Si</span>
+          <span>Forma pago: Nota de credito</span>
+        </div>
+      </section>
+
+      <section class="screen">
+        <div class="screen-top">
+          <div>
+            <span>03</span>
+            <h2>Adjunto PDF y deducciones</h2>
+          </div>
+          <strong>Evidencia</strong>
+        </div>
+        <div class="upload-preview">
+          <div class="file-icon">PDF</div>
+          <div>
+            <b>acuerdo-comercial-abbot-2026.pdf</b>
+            <p>Archivo asociado al codigo AC-2026-001 para consulta posterior.</p>
+          </div>
+          <button>Ver PDF</button>
+        </div>
+        <div class="deductions">
+          <span>PMC: No</span>
+          <span>Promociones: No</span>
+          <span>Devol. compra: No</span>
+          <span>RU: No</span>
+          <span>Venta info: No</span>
+        </div>
+      </section>
+
+      <section class="screen">
+        <div class="screen-top">
+          <div>
+            <span>04</span>
+            <h2>Seguimiento mensual</h2>
+          </div>
+          <strong>Compras</strong>
+        </div>
+        <div class="month-grid">
+          <article><b>Ene</b><small>Compra</small><span>$0.00</span><em>Peligro</em></article>
+          <article><b>Feb</b><small>Compra</small><span>$0.00</span><em>Peligro</em></article>
+          <article><b>Mar</b><small>Compra</small><span>$0.00</span><em>Peligro</em></article>
+          <article><b>Abr</b><small>Compra</small><span>$0.00</span><em>Peligro</em></article>
+          <article><b>May</b><small>Compra</small><span>$0.00</span><em>Peligro</em></article>
+          <article><b>Jun</b><small>Compra</small><span>$0.00</span><em>Peligro</em></article>
+        </div>
+        <div class="summary-line">
+          <span>Objetivo base: $3,332,564.58</span>
+          <span>Rebate estimado: $0.00</span>
+          <span>Cumplimiento: 0.0%</span>
+        </div>
+      </section>
+
+      <section class="screen">
+        <div class="screen-top">
+          <div>
+            <span>05</span>
+            <h2>Contabilidad / notas de credito</h2>
+          </div>
+          <strong>Consulta</strong>
+        </div>
+        <div class="table-preview accounting">
+          <div class="table-row header">
+            <span>Codigo</span><span>Base calculo</span><span>Valor esperado</span><span>Saldo</span>
+          </div>
+          <div class="table-row">
+            <span>AC-2026-001</span><span>$0.00</span><span>$0.00</span><span>Pendiente</span>
+          </div>
+          <div class="table-row">
+            <span>AC-2026-005</span><span>$0.00</span><span>$0.00</span><span>Pendiente</span>
+          </div>
+        </div>
+        <p class="note">
+          Contabilidad consulta maestro, evidencia PDF, valor esperado, valor recibido y saldo
+          pendiente sin modificar registros de Compras.
+        </p>
+      </section>
+
+      <section class="screen">
+        <div class="screen-top">
+          <div>
+            <span>06</span>
+            <h2>Reportes y alertas</h2>
+          </div>
+          <strong>Exportable</strong>
+        </div>
+        <div class="report-preview">
+          <button>Maestro de acuerdos</button>
+          <button>Seguimiento mensual</button>
+          <button>Contabilidad / NC</button>
+          <button>Excepciones y alertas</button>
+        </div>
+        <div class="alert-list">
+          <p><b>Incumplimiento:</b> cumplimiento acumulado menor al 95%.</p>
+          <p><b>Excepcion:</b> productos/proveedores excluidos del calculo.</p>
+          <p><b>Proximo a vencer:</b> convenios con vigencia cercana al cierre.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
